@@ -1,0 +1,113 @@
+Zadanie 1.
+
+napis = input("podaj napis: ")
+
+x = napis[::2]
+y = napis[1:3]+napis[7::2]
+space1 = " ".join(x)
+space2 = " ".join(y)
+print(space1)
+print(space2)
+
+print(f" {napis[0]} {napis[2]} {napis[4]} {napis[6]} {napis[8]} {napis[10]} {napis[12]} {napis[14]}")
+print(f" {napis[1]} {napis[3]} {napis[7]} {napis[9]} {napis[11]} {napis[13]}")
+
+Zadanie 2.
+
+tekst = input("Podaj tekst: ")
+
+print(f"{tekst[0:1]}{tekst[1]*2}{tekst[2:3]}{tekst[3]*2}{tekst[4:5]}{tekst[5]*2}{tekst[6:7]}{tekst[7]*2}{tekst[8:9]}{tekst[9]*2}")
+
+Zadanie 3.
+
+x = int(input("podaj liczbe: "))
+
+print(x * "*")
+for i in range (2,x):
+    print(f'*{" " * (x-2)}*')
+print(x * "*")
+
+
+Zadanie 4.
+
+x = int(input("Wpisz ilość pożądanych boków: "))
+lenthOfX = str(x)
+numberOfSteps = 0
+print(x * " " + "/\\")
+for i in range(x - 1):
+    print(numberOfSteps * " " + "\\")
+    numberOfSteps += 1
+for i in range(x - 1):
+    print(numberOfSteps * " " + "/")
+    numberOfSteps -= 1
+print((x - 1) * " " + "\\ /")
+
+print("")
+print(lenthOfX)
+print(x)
+
+Zadanie 5.
+
+text = str(input("Podaj swoj tekst: "))
+length = len(text)
+
+print((length + 4) * "*")
+print(f"* {text} *")
+print((length + 4) *  "*")
+
+Zadanie 6.
+
+x = int(input("podaj dlugosc przyprostokatnej: "))
+
+for i in range(1):
+    for j in range(1, x+1):
+        print(j * "*")
+
+Zadanie 7.
+
+k = int(input("Wpisz stan początkowy: "))
+n = int(input("Wpisz ilość lat: "))
+p = float(input("Wpisz oprocentowanie już podzielone przez odpowiednią liczbę: "))
+n1 = int(input("Wpisz liczbę kapitalizacji: "))
+
+stanKoncowy = k * (1 + (p / 100)) ** n1
+
+print(f"Po {n} latach, przy oprocentowaniu {p}% będziemy mieć do dyspozycji {stanKoncowy} złotych.")
+
+stanKoncowy1 = k * (1 + (p/(100 * k)) ** (n1 * k))
+
+print(f"Po {n} latach, przy oprocentowaniu {p}% będziemy mieć do dyspozycji {stanKoncowy1} złotych.")
+
+Zadanie 8.
+
+a = int(input("podaj liczbe: "))
+b = int(input("podaj liczbe 2: "))
+c = int(input("podaj liczbe 3: "))
+x = 9
+
+delta = (b**2) - 4*a*c
+
+print(f'delta wynosi: {delta}')
+
+if delta < 0:
+   print("rownanie nie jest kwadratowe")
+elif delta > 0:
+   x_1 = (-(b + (delta)** 0.5))
+   x_2 =  2 * a
+   y_1 = (-b + delta** 0.5)
+   y_2 = 2*a
+   print(f" X_1 = {x_1 / x_2}")
+   print(f" x_2 = {y_1/y_2}")
+elif delta == 0:
+    x_0 = (-b) / (2 * a)
+    print(x_0)
+
+Zadanie 9. 
+
+x = input("Podaj liczbe: ")
+
+for y in x:
+   cyfra =('0','1','2','3','4','5','6','7','8','9')
+   if y in cyfra:
+       slowo=("zero","jeden","dwa","trzy","cztery","pięć","sześć","siedem","osiem","dziewięć")
+       print(slowo[int(y)])
