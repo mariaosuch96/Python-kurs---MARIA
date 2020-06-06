@@ -1,0 +1,93 @@
+Zadanie 1. Wymień znane Ci struktury danych w Pythonie. Które z nich są mutowalne a które nie?
+
+Niemutowalne: tuple, string, int, float, bool
+
+Mutowalne: dict, list.
+    
+Zadanie 2. Czy umiesz wytłumaczyć co to jest sekwencja? Jakie sekwencje znasz?
+
+Sekwencje to listy, krotki oraz napisy, elementy są tutaj ponumerowane i ich kolejność jest ustalona, jest indeksowalna.
+
+Zadanie 3. Wybierz co trzeci znak z napisu "abrakadabra". Przypisz go do zmiennej tekst
+
+x = "abrakadabra"
+y = x[0::3]
+print(y)
+
+Zadanie 4. Zaprezentuj jak działa wyrażenie warunkowe. Postaraj się o przykład pokazujący wszystkie znane Ci aspekty wyrażenia warunkowego.
+
+liczba = 8
+if liczba == 24
+print "Zmienna jest równa 24"
+else:
+    "Zmienna nie jest równa 24"
+
+Zadanie 5. Zaproponuj przykład użycia pętli while. Np. do odliczania od 10 do 0 z pomienięciem 5.
+
+x = 11
+
+while True:
+    x-= 1
+    if x == 5:
+        continue
+    elif x < 0:
+        break
+        
+    print(x)
+    
+Zadanie 6. Zaproponuj przykład użycia pętli for. W przykładzie użyj słownika i przeiteruj po elementach słownika (items)
+
+slownik = {"pies": "dog", "kot": "cat"}
+
+for sl in slownik:
+    print(sl)
+    
+Zadanie 7. Zdefiniuj funkcję power, która przyjmie jeden lub dwa argumenty a i b. Argument b powinien przyjmować wartość domyślną tak, by poniższe wywałania miały sens:
+
+power(2, 3) == 8
+power(4) == 16
+
+def power(a, b=2):
+    
+    count1 = a ** b
+    return count1
+
+print(power(4))
+print(power(2, 3))
+
+Zadanie 8. Napisz funkcję, która przyjmie dowolną liczbę argumentów pozycyjnych i kluczowych i wypisze je na ekranie
+
+def foo(*args, **kwargs):
+    print("Pozycyjnych: ", len (args))
+    print("Kluczowych: ", len (kwargs))
+    
+foo(10, 20, a=1, b=2, c=3)
+
+Zadanie 9. Zdefiniuj klasę Osoba, która będzie reprezentowała osobę. Osoba posiada atrybuty name, last_name, birth_year posiada też atrybut dynamiczny - age, który wylicza wiek na podstawie aktualnego roku i birth_year. Skorzystaj z 'datetime'. Dodatkowo klasa ta powinna mieć metodę info, która wypisz imie, nazwisko i wiek
+
+osoba = Osoba("Johny", "Bravo", 2000)
+assert osoba.age == 20
+assert osoba.info == "Johny Bravo (20)"
+import datetime 
+class osoba: 
+    
+    def init(self, name, last_name, birth_year):
+        self.name = name
+        self.last_name = last_name
+        self.birth_year = birth_year
+        self.age = datetime.datetime.now()year - birth_year
+        
+    @property
+    def info(self):
+        return f"Imię: {self.name}, nazwisko: {self.last_name}, wiek: {self.age}"
+
+osoba = Osoba("Johny", "Bravo", 2000)
+print(osoba.info)
+
+
+zad 10.
+Zdefiniuj klasę Student, która będzie dziedziczyć po klasie Osoba. Student w czasie tworzenia wymaga podania dodatkowego atrybutu - kierunek. W metodzie info należy rozszerzyć działanie metody info z klasy rodzica. Nie należy jednak całkowicie jej nadpisywać
+
+student = Student("Johny", "Bravo", 2000, "physics")
+assert osoba.age == 20
+assert osoba.info == "Johny Bravo (20) - physics"
